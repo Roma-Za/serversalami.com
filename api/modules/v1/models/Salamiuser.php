@@ -1,0 +1,41 @@
+<?php
+ 
+namespace api\modules\v1\models;
+ 
+use \yii\db\ActiveRecord;
+/**
+ * Salamiuser Model
+ */
+class Salamiuser extends ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'salami_user';
+    }
+ 
+    /**
+     * @inheritdoc
+     */
+    public static function primaryKey()
+    {
+        return ['id'];
+    }
+ 
+    /**
+     * Define rules for validation
+     */
+    public function rules()
+    {
+        return [
+            [['facebook_id', 'name', 'email'], 'required']
+        ];
+    }
+
+    public function getAlbums()
+    {
+        return $this->hasMany(Album::className(), ['user_id' => 'id']);
+    }
+}
