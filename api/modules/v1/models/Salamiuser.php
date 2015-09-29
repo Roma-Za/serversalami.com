@@ -15,25 +15,25 @@ class Salamiuser extends ActiveRecord
     {
         return 'salami_user';
     }
- 
-    /**
-     * @inheritdoc
-     */
-    public static function primaryKey()
-    {
-        return ['id'];
-    }
- 
-    /**
-     * Define rules for validation
-     */
-    public function rules()
-    {
-        return [
-            [['facebook_id', 'name', 'email'], 'required']
-        ];
-    }
+	
+	  /**
 
+     * Define rules for validation
+
+     */
+
+    public function rules()
+
+    {
+
+        return [
+
+            [['facebook_id', 'name', 'email', 'birthday', 'gender', 'profile_picture', 'location'], 'required']
+
+        ];
+
+    }
+	
     public function getAlbums()
     {
         return $this->hasMany(Album::className(), ['user_id' => 'id']);

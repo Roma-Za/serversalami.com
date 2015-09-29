@@ -31,6 +31,11 @@ return [
                 ],
             ],
         ],
+		'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
@@ -49,7 +54,10 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/salamiuser'
+                    'controller' => 'v1/salamiuser',
+					'tokens' => [
+                        '{id}' => '<id:\\w+>'
+                    ]
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
