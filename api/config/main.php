@@ -28,6 +28,7 @@ return [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
+                    'logFile' => 'salamiapp.log',
                 ],
             ],
         ],
@@ -55,9 +56,6 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/salamiuser',
-					'tokens' => [
-                        '{id}' => '<id:\\w+>'
-                    ]
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
