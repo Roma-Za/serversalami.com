@@ -6,7 +6,6 @@ $params = array_merge(
     require(__DIR__ . '/params.php')
     //require(__DIR__ . '/params-local.php')
 );
- 
 return [
     'id' => 'app-api',
     'basePath' => dirname(__DIR__),
@@ -17,6 +16,7 @@ return [
             'class' => 'api\modules\v1\Module'   // here is our v1 modules
         ]
     ],
+	
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -30,8 +30,15 @@ return [
                     'levels' => ['error', 'warning'],
                     'logFile' => 'salamiapp.log',
                 ],
+				[
+					'class' => 'yii\log\FileTarget',
+					'levels' => ['info'],
+					'categories' => ['test_category'],
+					'logFile' => 'test_success.log',
+				]
             ],
         ],
+		
 		'request' => [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
@@ -47,7 +54,8 @@ return [
                     'controller' => 'v1/country',   // our country api rule,
                     'tokens' => [
                         '{id}' => '<id:\\w+>'
-                    ]
+                    ],
+                    'extraPatterns' => ['GET search' => 'search']
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
@@ -55,7 +63,8 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/salamiuser',
+                    'controller' => 'v1/salamiuser'
+
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
