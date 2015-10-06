@@ -28,7 +28,7 @@ class Salamiuser extends ActiveRecord
 
         return [
 
-            [['facebook_id', 'name', 'email', 'birthday', 'gender', 'profile_picture', 'location'], 'required']
+            [['facebook_id', 'name', 'email', 'birthday', 'gender', 'profile_picture', 'collection_type','location'], 'required']
 
         ];
 
