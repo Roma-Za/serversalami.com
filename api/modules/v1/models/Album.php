@@ -15,14 +15,6 @@ class Album extends ActiveRecord
     {
         return 'album';
     }
- 
-    /**
-     * @inheritdoc
-     */
-    public static function primaryKey()
-    {
-        return ['album_id'];
-    }
 
     /**
      * Define rules for validation
@@ -32,5 +24,10 @@ class Album extends ActiveRecord
         return [
             [['user_id', 'name', 'facebook_album_id', 'description', 'picture_url'], 'required']
         ];
+    }
+
+    public function getPhotos()
+    {
+        return $this->hasMany(Photos::className(), ['id' => 'user_id']);
     }
 }
