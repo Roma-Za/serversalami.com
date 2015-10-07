@@ -23,14 +23,14 @@ class Album extends ActiveRecord
     {
         return ['album_id'];
     }
- 
+
     /**
      * Define rules for validation
      */
     public function rules()
     {
         return [
-            [['user_id', 'name', 'facebook_album_id'], 'required']
+            [['user_id', 'name', 'facebook_album_id', 'description', 'picture_url'], 'required']
         ];
     }
 }
