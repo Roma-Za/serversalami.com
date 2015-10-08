@@ -63,7 +63,8 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/salamiuser'
+                    'controller' => 'v1/salamiuser',
+                    'extraPatterns' => ['GET search' => 'search']
 
                 ],
                 [
