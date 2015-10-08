@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f6e6d0f-2162-4b69-9d21-037b8a9dd464" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\serversalami.com\api\modules\v1\controllers\CountryController.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\serversalami.com\api\modules\v1\models\Country.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin" afterPath="$PROJECT_DIR$/api/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modules/v1/controllers/AlbumController.php" afterPath="$PROJECT_DIR$/api/modules/v1/controllers/AlbumController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modules/v1/controllers/PhotosController.php" afterPath="$PROJECT_DIR$/api/modules/v1/controllers/PhotosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/config/main.php" afterPath="$PROJECT_DIR$/api/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9f6e6d0f-2162-4b69-9d21-037b8a9dd464" name="Default" comment="" />
     <ignored path="serversalami.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -476,7 +468,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17619048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
