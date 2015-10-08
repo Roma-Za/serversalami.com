@@ -51,14 +51,6 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/country',   // our country api rule,
-                    'tokens' => [
-                        '{id}' => '<id:\\w+>'
-                    ],
-                    'extraPatterns' => ['GET search' => 'search']
-                ],
-                [
-                    'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/user'
                 ],
                 [
@@ -69,11 +61,13 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/album'
+                    'controller' => 'v1/album',
+                    'extraPatterns' => ['GET search' => 'search']
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'v1/photos'
+                    'controller' => 'v1/photos',
+                    'extraPatterns' => ['GET search' => 'search']
                 ]
             ],
         ]
