@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 09 2015 г., 12:09
+-- Время создания: Окт 11 2015 г., 15:56
 -- Версия сервера: 5.6.24
 -- Версия PHP: 5.6.8
 
@@ -33,16 +33,41 @@ CREATE TABLE IF NOT EXISTS `album` (
   `description` text,
   `picture_url` varchar(255) DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `album`
 --
 
 INSERT INTO `album` (`album_id`, `facebook_album_id`, `name`, `description`, `picture_url`, `user_id`) VALUES
-(15, '2344366576', 'dfghntk', 'dsfghgfkgj', 'xfhgdhjhjk', 16),
-(17, '711420958963588', 'Сollection', 'типа коллекция', 'https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-0/s180x540/12003346_711421015630249_1739596090561163625_n.jpg?oh=fc485152b163eda7e1c8ff502b6bc9bf&oe=56992364', 19),
-(18, '1378557972449974', 'Profile Pictures', 'unknown', 'https://scontent.xx.fbcdn.net/hphotos-xap1/v/t1.0-0/s180x540/10429412_1382705118701926_964606502965317900_n.jpg?oh=0b9aedaa53f43b16814c0d315348e943&oe=56A0B32F', 20);
+(17, '711420958963588', 'Сollection', 'типа коллекция', 'https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-0/s180x540/12003346_711421015630249_1739596090561163625_n.jpg?oh=fc485152b163eda7e1c8ff502b6bc9bf&oe=56992364', 19);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `likes`
+--
+
+CREATE TABLE IF NOT EXISTS `likes` (
+  `id` int(11) NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `user1_id` int(11) NOT NULL,
+  `user2_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL,
+  `text` text,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sender_id` int(11) NOT NULL,
+  `recipient_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -73,19 +98,15 @@ CREATE TABLE IF NOT EXISTS `photos` (
   `id` int(11) NOT NULL,
   `picture_url` varchar(255) DEFAULT NULL,
   `album_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `photos`
 --
 
 INSERT INTO `photos` (`id`, `picture_url`, `album_id`) VALUES
-(6, '"fhgfjghdj"', 15),
 (9, 'https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/q81/s720x720/12003346_711421015630249_1739596090561163625_n.jpg?oh=8ff61c29aeb5b6465f341a937eac9a30&oe=56D309E2', 17),
-(10, 'https://scontent.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/s720x720/12004110_711421415630209_1305689299921036111_n.jpg?oh=51d41c1ad46666f1e40d941e410cae15&oe=56D09BB4', 17),
-(11, 'https://scontent.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10526047_1382701098702328_2833924786505293382_n.jpg?oh=7aad2dc31d511fea47b7637b7d4fd6ec&oe=5686C694', 18),
-(12, 'https://scontent.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/p720x720/10429412_1382705118701926_964606502965317900_n.jpg?oh=194b501038ac0670fc1ad0f324624bae&oe=56916A11', 18),
-(13, 'https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/10933865_1378557945783310_3310575411364636861_n.jpg?oh=10679996083987ba5e33ecfb66fe6338&oe=5699DCA2', 18);
+(10, 'https://scontent.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/s720x720/12004110_711421415630209_1305689299921036111_n.jpg?oh=51d41c1ad46666f1e40d941e410cae15&oe=56D09BB4', 17);
 
 -- --------------------------------------------------------
 
@@ -104,16 +125,14 @@ CREATE TABLE IF NOT EXISTS `salami_user` (
   `profile_picture` varchar(255) DEFAULT NULL,
   `collection_type` varchar(255) DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `salami_user`
 --
 
 INSERT INTO `salami_user` (`id`, `email`, `create_time`, `name`, `birthday`, `gender`, `facebook_id`, `profile_picture`, `collection_type`, `location`) VALUES
-(16, 'zapriy.05@mail.ru', '2015-10-07 20:59:28', 'Roma ', 'dfghnfhjfhjhh', 'male', '6992925135097', 'sdfghdgfhdhgjghj', 'fggfh', '1234,3456'),
-(19, 'zapriy.05@mail.ru', '2015-10-09 08:58:49', 'Roma  Za', '05/09/1983', 'male', '699292513509766', 'https://scontent.xx.fbcdn.net/hprofile-xpf1/v/t1.0-1/p320x320/11822756_695230833915934_8640396150136684128_n.jpg?oh=847feafbfd4a114eaff33b995891b9b6&oe=56853A25', 'beer caps', '49.694022,36.26572'),
-(20, 'alexey.zapriy@yahoo.com', '2015-10-09 09:55:57', 'Alexey Belous', '07/03/1992', 'male', '1479429089029528', 'https://scontent.xx.fbcdn.net/hprofile-xap1/v/t1.0-1/p320x320/10429412_1382705118701926_964606502965317900_n.jpg?oh=7ac649358668b7c7b08c100261096fce&oe=56906FBE', 'flags', '49.694022,36.26572');
+(19, 'zapriy.05@mail.ru', '2015-10-09 08:58:49', 'Roma  Za', '05/09/1983', 'male', '699292513509766', 'https://scontent.xx.fbcdn.net/hprofile-xpf1/v/t1.0-1/p320x320/11822756_695230833915934_8640396150136684128_n.jpg?oh=847feafbfd4a114eaff33b995891b9b6&oe=56853A25', 'beer caps', '49.694022,36.26572');
 
 -- --------------------------------------------------------
 
@@ -153,6 +172,18 @@ ALTER TABLE `album`
   ADD PRIMARY KEY (`album_id`), ADD KEY `fk_album_user_idx` (`user_id`);
 
 --
+-- Индексы таблицы `likes`
+--
+ALTER TABLE `likes`
+  ADD PRIMARY KEY (`id`,`user1_id`,`user2_id`), ADD KEY `fk_likes_salami_user1_idx` (`user1_id`), ADD KEY `fk_likes_salami_user2_idx` (`user2_id`);
+
+--
+-- Индексы таблицы `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`,`sender_id`,`recipient_id`), ADD KEY `fk_messages_salami_user_idx` (`sender_id`), ADD KEY `fk_messages_salami_user1_idx` (`recipient_id`);
+
+--
 -- Индексы таблицы `migration`
 --
 ALTER TABLE `migration`
@@ -184,17 +215,27 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `album`
 --
 ALTER TABLE `album`
-  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT для таблицы `likes`
+--
+ALTER TABLE `likes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `salami_user`
 --
 ALTER TABLE `salami_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
@@ -208,13 +249,27 @@ ALTER TABLE `user`
 -- Ограничения внешнего ключа таблицы `album`
 --
 ALTER TABLE `album`
-ADD CONSTRAINT `fk_album_user` FOREIGN KEY (`user_id`) REFERENCES `salami_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `fk_album_user` FOREIGN KEY (`user_id`) REFERENCES `salami_user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Ограничения внешнего ключа таблицы `likes`
+--
+ALTER TABLE `likes`
+ADD CONSTRAINT `fk_likes_salami_user1` FOREIGN KEY (`user1_id`) REFERENCES `salami_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_likes_salami_user2` FOREIGN KEY (`user2_id`) REFERENCES `salami_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ограничения внешнего ключа таблицы `messages`
+--
+ALTER TABLE `messages`
+ADD CONSTRAINT `fk_messages_salami_user` FOREIGN KEY (`sender_id`) REFERENCES `salami_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `fk_messages_salami_user1` FOREIGN KEY (`recipient_id`) REFERENCES `salami_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Ограничения внешнего ключа таблицы `photos`
 --
 ALTER TABLE `photos`
-ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `album` (`album_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `album` (`album_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
