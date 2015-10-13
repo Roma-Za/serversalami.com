@@ -13,7 +13,10 @@ class Messages extends ActiveRecord
     {
         return 'messages';
     }
-
+    public static function primaryKey()
+    {
+        return ['id'];
+    }
     /**
      * Define rules for validation
      */

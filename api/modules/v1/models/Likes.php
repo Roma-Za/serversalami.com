@@ -13,7 +13,10 @@ class Likes extends ActiveRecord
     {
         return 'likes';
     }
-
+    public static function primaryKey()
+    {
+        return ['id'];
+    }
     /**
      * Define rules for validation
      */
