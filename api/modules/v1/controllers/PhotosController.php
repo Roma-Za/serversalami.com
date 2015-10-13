@@ -14,7 +14,6 @@ class PhotosController extends ActiveController
 
     public function actionSearch()
     {
-        //return 'Hello World';
         if (!empty($_GET)) {
             $model = new $this->modelClass;
             foreach ($_GET as $key => $value) {

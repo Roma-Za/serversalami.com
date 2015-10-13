@@ -38,4 +38,14 @@ class Salamiuser extends ActiveRecord
     {
         return $this->hasMany(Album::className(), ['user_id' => 'id']);
     }
+
+    public function getLikes()
+    {
+        return $this->hasMany(Likes::className(), ['user1_id' => 'id']);
+    }
+
+    public function getMessages()
+    {
+        return $this->hasMany(Messages::className(), ['sender_id' => 'id']);
+    }
 }
