@@ -7296,3 +7296,404 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1444771527.001
     'REQUEST_TIME' => 1444771527
 ]
+2015-10-14 11:52:44 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\web\HttpException' with message 'No entries found with this query string' in D:\xampp\htdocs\serversalami.com\api\modules\v1\controllers\LikesController.php:31
+Stack trace:
+#0 [internal function]: api\modules\v1\controllers\LikesController->actionSearch()
+#1 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('search', Array)
+#4 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('v1/likes/search', Array)
+#5 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\serversalami.com\api\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2015-10-14 11:52:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'user1_id' => '29'
+    'user2_id' => '28'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '33835d48.ngrok.io'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_DEVTOOLS_EMULATE_NETWORK_CONDITIONS_CLIENT_ID' => '66244CEF-A133-4587-B135-09298469B7ED'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 4.2.2; Lenovo A369i Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Crosswalk/14.43.343.25 Mobile Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en'
+    'HTTP_X_FORWARDED_FOR' => '192.166.132.147'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft Emulator Manager\\1.0\\;C:\\Program Files (x86)\\nodejs\\;D:\\xampp\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Users\\Roman\\AppData\\Local\\Android\\sdk; C:\\Users\\Roman\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Roman\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\cmd'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at 33835d48.ngrok.io Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => '33835d48.ngrok.io'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/serversalami.com/api/web/index.php'
+    'REMOTE_PORT' => '20211'
+    'REDIRECT_QUERY_STRING' => 'user1_id=29&user2_id=28'
+    'REDIRECT_URL' => '/serversalami.com/api/web/v1/likes/search'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'user1_id=29&user2_id=28'
+    'REQUEST_URI' => '/serversalami.com/api/web/v1/likes/search?user1_id=29&user2_id=28'
+    'SCRIPT_NAME' => '/serversalami.com/api/web/index.php'
+    'PHP_SELF' => '/serversalami.com/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444816364.32
+    'REQUEST_TIME' => 1444816364
+]
+2015-10-14 16:58:39 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\HttpException' with message 'No entries found with this query string' in D:\xampp\htdocs\serversalami.com\api\modules\v1\controllers\LikesController.php:31
+Stack trace:
+#0 [internal function]: api\modules\v1\controllers\LikesController->actionSearch()
+#1 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('search', Array)
+#4 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('v1/likes/search', Array)
+#5 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\serversalami.com\api\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2015-10-14 16:58:39 [::1][-][-][info][application] $_GET = [
+    'user1_id' => '33'
+    'user2_id' => '28'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '33835d48.ngrok.io'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_DEVTOOLS_EMULATE_NETWORK_CONDITIONS_CLIENT_ID' => 'CB4529B0-1AD9-41C6-B20A-A7531938C8E1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 4.2.2; Lenovo A369i Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Crosswalk/14.43.343.25 Mobile Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en'
+    'HTTP_X_FORWARDED_FOR' => '192.166.132.147'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft Emulator Manager\\1.0\\;C:\\Program Files (x86)\\nodejs\\;D:\\xampp\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Users\\Roman\\AppData\\Local\\Android\\sdk; C:\\Users\\Roman\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Roman\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\cmd'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at 33835d48.ngrok.io Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => '33835d48.ngrok.io'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/serversalami.com/api/web/index.php'
+    'REMOTE_PORT' => '9553'
+    'REDIRECT_QUERY_STRING' => 'user1_id=33&user2_id=28'
+    'REDIRECT_URL' => '/serversalami.com/api/web/v1/likes/search'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'user1_id=33&user2_id=28'
+    'REQUEST_URI' => '/serversalami.com/api/web/v1/likes/search?user1_id=33&user2_id=28'
+    'SCRIPT_NAME' => '/serversalami.com/api/web/index.php'
+    'PHP_SELF' => '/serversalami.com/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444834719.48
+    'REQUEST_TIME' => 1444834719
+]
+2015-10-14 17:11:13 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\web\HttpException' with message 'No entries found with this query string' in D:\xampp\htdocs\serversalami.com\api\modules\v1\controllers\LikesController.php:31
+Stack trace:
+#0 [internal function]: api\modules\v1\controllers\LikesController->actionSearch()
+#1 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('search', Array)
+#4 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('v1/likes/search', Array)
+#5 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\serversalami.com\api\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2015-10-14 17:11:13 [127.0.0.1][-][-][info][application] $_GET = [
+    'user1_id' => '33'
+    'user2_id' => '26'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '33835d48.ngrok.io'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_DEVTOOLS_EMULATE_NETWORK_CONDITIONS_CLIENT_ID' => '0EBEAAFA-644E-4E56-8827-E665CB175E8C'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 4.2.2; Lenovo A369i Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Crosswalk/14.43.343.25 Mobile Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en'
+    'HTTP_X_FORWARDED_FOR' => '192.166.132.147'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft Emulator Manager\\1.0\\;C:\\Program Files (x86)\\nodejs\\;D:\\xampp\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Users\\Roman\\AppData\\Local\\Android\\sdk; C:\\Users\\Roman\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Roman\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\cmd'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at 33835d48.ngrok.io Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => '33835d48.ngrok.io'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/serversalami.com/api/web/index.php'
+    'REMOTE_PORT' => '11690'
+    'REDIRECT_QUERY_STRING' => 'user1_id=33&user2_id=26'
+    'REDIRECT_URL' => '/serversalami.com/api/web/v1/likes/search'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'user1_id=33&user2_id=26'
+    'REQUEST_URI' => '/serversalami.com/api/web/v1/likes/search?user1_id=33&user2_id=26'
+    'SCRIPT_NAME' => '/serversalami.com/api/web/index.php'
+    'PHP_SELF' => '/serversalami.com/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444835473.348
+    'REQUEST_TIME' => 1444835473
+]
+2015-10-14 22:41:51 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\HttpException' with message 'No entries found with this query string' in D:\xampp\htdocs\serversalami.com\api\modules\v1\controllers\LikesController.php:31
+Stack trace:
+#0 [internal function]: api\modules\v1\controllers\LikesController->actionSearch()
+#1 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('search', Array)
+#4 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('v1/likes/search', Array)
+#5 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\serversalami.com\api\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2015-10-14 22:41:51 [::1][-][-][info][application] $_GET = [
+    'user1_id' => '30'
+    'user2_id' => '27'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '5f9493c7.ngrok.io'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_DEVTOOLS_EMULATE_NETWORK_CONDITIONS_CLIENT_ID' => 'E8154D5E-2C85-4540-A3E6-BB39A6A4D8BA'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 4.2.2; Lenovo A369i Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Crosswalk/14.43.343.25 Mobile Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en'
+    'HTTP_X_FORWARDED_FOR' => '192.166.132.147'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft Emulator Manager\\1.0\\;C:\\Program Files (x86)\\nodejs\\;D:\\xampp\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Users\\Roman\\AppData\\Local\\Android\\sdk; C:\\Users\\Roman\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Roman\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\cmd'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at 5f9493c7.ngrok.io Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => '5f9493c7.ngrok.io'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/serversalami.com/api/web/index.php'
+    'REMOTE_PORT' => '40313'
+    'REDIRECT_QUERY_STRING' => 'user1_id=30&user2_id=27'
+    'REDIRECT_URL' => '/serversalami.com/api/web/v1/likes/search'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'user1_id=30&user2_id=27'
+    'REQUEST_URI' => '/serversalami.com/api/web/v1/likes/search?user1_id=30&user2_id=27'
+    'SCRIPT_NAME' => '/serversalami.com/api/web/index.php'
+    'PHP_SELF' => '/serversalami.com/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444855311.151
+    'REQUEST_TIME' => 1444855311
+]
+2015-10-15 15:31:41 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'Object not found: 42' in D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\rest\Action.php:101
+Stack trace:
+#0 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\rest\DeleteAction.php(28): yii\rest\Action->findModel('42')
+#1 [internal function]: yii\rest\DeleteAction->run('42')
+#2 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Action.php(92): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\Action->runWithParams(Array)
+#4 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('delete', Array)
+#5 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('v1/album/delete', Array)
+#6 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\serversalami.com\api\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2015-10-15 15:31:41 [::1][-][-][info][application] $_GET = [
+    'id' => '42'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '074c360e.ngrok.io'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_DEVTOOLS_EMULATE_NETWORK_CONDITIONS_CLIENT_ID' => '9BAB81C1-873F-49A4-81AC-CC84EB985A09'
+    'HTTP_ORIGIN' => 'file://'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 4.2.2; Lenovo A369i Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Crosswalk/14.43.343.25 Mobile Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en'
+    'HTTP_X_FORWARDED_FOR' => '192.166.132.147'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft Emulator Manager\\1.0\\;C:\\Program Files (x86)\\nodejs\\;D:\\xampp\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Users\\Roman\\AppData\\Local\\Android\\sdk; C:\\Users\\Roman\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Roman\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\cmd'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at 074c360e.ngrok.io Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => '074c360e.ngrok.io'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/serversalami.com/api/web/index.php'
+    'REMOTE_PORT' => '62918'
+    'REDIRECT_URL' => '/serversalami.com/api/web/v1/albums/42'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'DELETE'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/serversalami.com/api/web/v1/albums/42'
+    'SCRIPT_NAME' => '/serversalami.com/api/web/index.php'
+    'PHP_SELF' => '/serversalami.com/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444915901.404
+    'REQUEST_TIME' => 1444915901
+]
+2015-10-15 16:21:27 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\web\HttpException' with message 'No entries found with this query string' in D:\xampp\htdocs\serversalami.com\api\modules\v1\controllers\LikesController.php:31
+Stack trace:
+#0 [internal function]: api\modules\v1\controllers\LikesController->actionSearch()
+#1 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('search', Array)
+#4 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('v1/likes/search', Array)
+#5 D:\xampp\htdocs\serversalami.com\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\serversalami.com\api\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2015-10-15 16:21:26 [::1][-][-][info][application] $_GET = [
+    'user1_id' => '40'
+    'user2_id' => '28'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '074c360e.ngrok.io'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 4.2.2; Lenovo A369i Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Crosswalk/14.43.343.25 Mobile Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en'
+    'HTTP_X_FORWARDED_FOR' => '192.166.132.147'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft Emulator Manager\\1.0\\;C:\\Program Files (x86)\\nodejs\\;D:\\xampp\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Users\\Roman\\AppData\\Local\\Android\\sdk; C:\\Users\\Roman\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Roman\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\cmd'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at 074c360e.ngrok.io Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => '074c360e.ngrok.io'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/serversalami.com/api/web/index.php'
+    'REMOTE_PORT' => '7199'
+    'REDIRECT_QUERY_STRING' => 'user1_id=40&user2_id=28'
+    'REDIRECT_URL' => '/serversalami.com/api/web/v1/likes/search'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'user1_id=40&user2_id=28'
+    'REQUEST_URI' => '/serversalami.com/api/web/v1/likes/search?user1_id=40&user2_id=28'
+    'SCRIPT_NAME' => '/serversalami.com/api/web/index.php'
+    'PHP_SELF' => '/serversalami.com/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444918886.843
+    'REQUEST_TIME' => 1444918886
+]

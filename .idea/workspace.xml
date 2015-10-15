@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f6e6d0f-2162-4b69-9d21-037b8a9dd464" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modules/v1/models/Likes.php" afterPath="$PROJECT_DIR$/api/modules/v1/models/Likes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modules/v1/models/Messages.php" afterPath="$PROJECT_DIR$/api/modules/v1/models/Messages.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/web/salamiapp.log" afterPath="$PROJECT_DIR$/api/web/salamiapp.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salamidb.sql" afterPath="$PROJECT_DIR$/salamidb.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="serversalami.com.iws" />
@@ -30,7 +30,7 @@
       <file leaf-file-name="PhotosController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modules/v1/controllers/PhotosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
+            <state vertical-scroll-proportion="0.0">
               <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="LikesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modules/v1/controllers/LikesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537">
+            <state vertical-scroll-proportion="0.0">
               <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
@@ -54,7 +54,7 @@
       <file leaf-file-name="Likes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modules/v1/models/Likes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="5" selection-start-line="15" selection-start-column="3" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
@@ -64,8 +64,8 @@
       <file leaf-file-name="Messages.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/modules/v1/models/Messages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35457706">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.49246815">
+              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -136,6 +136,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -219,7 +220,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -657,7 +657,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modules/v1/controllers/PhotosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
@@ -667,7 +667,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modules/v1/controllers/LikesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
@@ -677,7 +677,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modules/v1/models/Likes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="5" selection-start-line="15" selection-start-column="3" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
@@ -685,8 +685,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modules/v1/models/Messages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35457706">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.49246815">
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
           <folding />
         </state>
       </provider>
