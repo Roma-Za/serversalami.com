@@ -15,8 +15,17 @@ class Salamiuser extends ActiveRecord
     {
         return 'salami_user';
     }
-	
-	  /**
+
+    public function getLat(){
+        $coords = explode(",", $this->location);
+        return floatval($coords[0]);
+    }
+
+    public function getLng(){
+        $coords = explode(",", $this->location);
+        return floatval($coords[1]);
+    }
+    /**
 
      * Define rules for validation
 
