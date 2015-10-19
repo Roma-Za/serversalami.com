@@ -78,6 +78,11 @@ return [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/likes',
                     'extraPatterns' => ['GET search' => 'search']
+                ],
+                 [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'v1/settings',
+                    'extraPatterns' => ['GET search' => 'search']
                 ]
             ],
         ]
