@@ -72,7 +72,7 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/messages',
-                    'extraPatterns' => ['GET search' => 'search']
+                    'extraPatterns' => ['GET search' => 'search', 'POST send' => 'send']
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
