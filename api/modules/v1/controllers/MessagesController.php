@@ -12,28 +12,21 @@ class MessagesController extends ActiveController
 {
     public $modelClass = 'api\modules\v1\models\Messages';
 
-    public function actionSearch()
+    public function actionHistory()
     {
         if (!empty($_GET)) {
-            $model = new $this->modelClass;
-            foreach ($_GET as $key => $value) {
-                if (!$model->hasAttribute($key)) {
-                    throw new \yii\web\HttpException(404, 'Invalid attribute:' . $key);
-                }
-            }
             try {
-                $provider = new ActiveDataProvider([
-                    'query' => $model->find()->where($_GET),
-                    'pagination' => false
-                ]);
+                $query = Messages::find()->where(['sender_id' => $_GET['user_id'], 'recipient_id' => $_GET['buddy_id']])
+                                         ->orWhere(['recipient_id' => $_GET['user_id'], 'sender_id' => $_GET['buddy_id']])
+                                         ->orderBy('created_at');
             } catch (Exception $ex) {
                 throw new \yii\web\HttpException(500, 'Internal server error');
             }
 
-            if ($provider->getCount() <= 0) {
+            if ($query->count() <= 0) {
                 throw new \yii\web\HttpException(404, 'No entries found with this query string');
             } else {
-                return $provider;
+                return $query->all();
             }
         } else {
             throw new \yii\web\HttpException(400, 'There are no query string');
@@ -52,7 +45,7 @@ class MessagesController extends ActiveController
             $message->sender_id = $senderUser->id;
             $message->recipient_id = $recipientUser->id;
             $message->text = $text;
-            $message->created_at = time();
+            $message->created_at = date("Y-m-d H:i:s");
             $message->state = "new";
             $saved = $message->save();
 
