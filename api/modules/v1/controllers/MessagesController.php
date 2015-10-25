@@ -23,23 +23,19 @@ class MessagesController extends ActiveController
                 throw new \yii\web\HttpException(500, 'Internal server error');
             }
 
-            if ($query->count() <= 0) {
-                throw new \yii\web\HttpException(404, 'No entries found with this query string');
-            } else {
-                return $query->all();
-            }
+            return $query->all();
         } else {
             throw new \yii\web\HttpException(400, 'There are no query string');
         }
     }
 
     public function actionSend(){
-        if (Yii::$app->request->post("recipient")) {
-            $recipient_id = Yii::$app->request->post("recipient");
+        if (Yii::$app->request->post("recipient_id")) {
+            $recipient_id = Yii::$app->request->post("recipient_id");
             $text = Yii::$app->request->post("message");
-            $sender_id = Yii::$app->request->post("sender");
-            $recipientUser = Salamiuser::find()->where(['facebook_id' => $recipient_id])->one();
-            $senderUser = Salamiuser::find()->where(['facebook_id' => $sender_id])->one();
+            $sender_id = Yii::$app->request->post("sender_id");
+            $recipientUser = Salamiuser::find()->where(['id' => $recipient_id])->one();
+            $senderUser = Salamiuser::find()->where(['id' => $sender_id])->one();
 
             $message = new Messages;
             $message->sender_id = $senderUser->id;
@@ -50,12 +46,12 @@ class MessagesController extends ActiveController
             $saved = $message->save();
 
             $data = array(
-              'user_ids' => array($recipient_id),
+              'user_ids' => array($recipientUser->facebook_id),
               'notification' => array(
                 "alert" => $text,
                 "android" => array(
                   'payload' => array(
-                    "sender" => $sender_id
+                    "sender" => $senderUser->facebook_id
                   )
                 )
               )

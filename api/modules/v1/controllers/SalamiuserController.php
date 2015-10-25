@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\db\Query;
 use yii\helpers\ArrayHelper;
 use api\modules\v1\models\Salamiuser;
+use api\modules\v1\models\Messages;
 /**
  * Salamiuser Controller API
  */
@@ -56,5 +57,36 @@ class SalamiuserController extends ActiveController
         return $salamiusers;
     }
 
+    public function actionConversations()
+    {
+        try {
+            $results1 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`'])
+                                        ->leftJoin('salami_user', '`messages`.`recipient_id` = `salami_user`.`id`')
+                                        ->where(['sender_id' => $_GET['user_id']])
+                                        ->orderBy(['created_at' => SORT_DESC])
+                                        ->distinct(['`salami_user`.`id`'])
+                                        ->asArray()->all();
+            $results2 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`'])
+                                        ->leftJoin('salami_user', '`messages`.`sender_id` = `salami_user`.`id`')
+                                        ->where(['recipient_id' => $_GET['user_id']])
+                                        ->orderBy(['created_at' => SORT_DESC])
+                                        ->distinct(['`salami_user`.`id`'])
+                                        ->asArray()->all();
+            
+            return array_merge($results1, $results2);
+        } catch (Exception $ex) {
+            throw new \yii\web\HttpException(500, 'Internal server error');
+        }
+        return [];
+    }
+
+    function removeFromArrayById($arr, $id){
+        for ($i = 0; $i < count($arr); $i++) {
+            if ($arr[$i]['id'] == $id){
+                unset($arr[$i]);
+            }
+        }
+        return $arr;
+    }
 
 }
