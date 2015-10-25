@@ -33,24 +33,35 @@ class SalamiuserController extends ActiveController
     public function actionSearch()
     {
         try {
-            $search_params = isset($_GET['collection_type']) ? [$_GET['collection_type']] : [];
-            if (isset($_GET["user_id"]) && isset($_GET["distance"])) {
-                $current_user = Salamiuser::find()->where(['id' => $_GET["user_id"]])->one();
+            $search_params = isset($_GET['collection_type']) ? ['collection_type' => $_GET['collection_type']] : [];
+            if(isset($_GET["id"])){
+                $current_user = Salamiuser::find()->where(['id' => $_GET["id"]])->one();
                 $salamiusers = Salamiuser::find()->where($search_params)->all();
-                $selected_user_ids = [];
-                foreach ($salamiusers as &$user) {
-                    if ($user->id == $current_user->id || $user->getLat() == 0 || $user->getLng() == 0) continue;
+                if (isset($_GET["distance"])) {                    
+                    $selected_user_ids = [];
+                    foreach ($salamiusers as $user) {
+                        if ($user->id == $current_user->id || $user->getLat() == 0 || $user->getLng() == 0) continue;
 
-                    if ($this->distance($current_user->getLat(), $current_user->getLng(), $user->getLat(), $user->getLng()) < $_GET["distance"]) {
-                        $selected_user_ids[] = $user->id;
+                        if ($this->distance($current_user->getLat(), $current_user->getLng(), $user->getLat(), $user->getLng()) < $_GET["distance"]) {
+                            $selected_user_ids[] = $user->id;
+                        }
                     }
+
+                    $salamiusers = Salamiuser::find()->joinWith('albums')->where(['id' => $selected_user_ids])->asArray()->all();
+                } else {
+                    $salamiusers = Salamiuser::find()->joinWith('albums')->where($search_params)->andWhere(['not in', '`salami_user`.`id`', [$_GET["id"]]])->asArray()->all();
                 }
-
-                $salamiusers = $salamiusers = Salamiuser::find()->joinWith('albums')->where(['id' => $selected_user_ids])->asArray()->all();
-            } else {
-                $salamiusers = $salamiusers = Salamiuser::find()->joinWith('albums')->where($_GET)->asArray()->all();
             }
+        } catch (Exception $ex) {
+            throw new \yii\web\HttpException(500, 'Internal server error');
+        }
+        return $salamiusers;
+    }
 
+    public function actionFinduser()
+    {
+        try {
+            $salamiusers = Salamiuser::find()->joinWith('albums')->where(['id' => $_GET["id"]])->asArray()->all();
         } catch (Exception $ex) {
             throw new \yii\web\HttpException(500, 'Internal server error');
         }
