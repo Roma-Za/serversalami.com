@@ -30,7 +30,7 @@ class SalamiuserController extends ActiveController
         return ($miles * 1.609344);
     }
 
-    public function actionSearch()
+    public function actionFindusers()
     {
         try {
             $search_params = isset($_GET['collection_type']) ? ['collection_type' => $_GET['collection_type']] : [];
@@ -58,10 +58,10 @@ class SalamiuserController extends ActiveController
         return $salamiusers;
     }
 
-    public function actionFinduser()
+    public function actionSearch()
     {
         try {
-            $salamiusers = Salamiuser::find()->joinWith('albums')->where(['id' => $_GET["id"]])->asArray()->all();
+            $salamiusers = Salamiuser::find()->joinWith('albums')->where($_GET)->asArray()->all();
         } catch (Exception $ex) {
             throw new \yii\web\HttpException(500, 'Internal server error');
         }
