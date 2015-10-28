@@ -42,7 +42,6 @@ class MessagesController extends ActiveController
             $message->sender_id = $senderUser->id;
             $message->recipient_id = $recipientUser->id;
             $message->text = $text;
-            $message->created_at = date("Y-m-d H:i:s");
             $message->state = "new";
             $saved = $message->save();
 

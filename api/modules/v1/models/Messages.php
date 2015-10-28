@@ -23,7 +23,7 @@ class Messages extends ActiveRecord
     public function rules()
     {
         return [
-            [['text', 'created_at', 'sender_id', 'recipient_id', 'state'], 'required']
+            [['text', 'sender_id', 'recipient_id', 'state'], 'required']
         ];
     }
 }
