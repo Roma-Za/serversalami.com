@@ -71,13 +71,13 @@ class SalamiuserController extends ActiveController
     public function actionConversations()
     {
         try {
-            $results1 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`'])
+            $results1 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`', '`messages`.`recipient_id`'])
                                         ->leftJoin('salami_user', '`messages`.`recipient_id` = `salami_user`.`id`')
                                         ->where(['sender_id' => $_GET['user_id']])
                                         ->orderBy(['created_at' => SORT_DESC])
                                         ->distinct(['`salami_user`.`id`'])
                                         ->asArray()->all();
-            $results2 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`'])
+            $results2 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`', '`messages`.`recipient_id`'])
                                         ->leftJoin('salami_user', '`messages`.`sender_id` = `salami_user`.`id`')
                                         ->where(['recipient_id' => $_GET['user_id']])
                                         ->orderBy(['created_at' => SORT_DESC])
