@@ -56,7 +56,7 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/salamiuser',
-                    'extraPatterns' => ['GET search' => 'search', 'GET findusers' => 'findusers', 'GET conversations' => 'conversations']
+                    'extraPatterns' => ['GET search' => 'search', 'GET findusers' => 'findusers', 'GET conversations' => 'conversations', 'GET likes' => 'likes']
 
                 ],
                 [

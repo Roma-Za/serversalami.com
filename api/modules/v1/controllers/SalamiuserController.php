@@ -12,6 +12,8 @@ use yii\db\Query;
 use yii\helpers\ArrayHelper;
 use api\modules\v1\models\Salamiuser;
 use api\modules\v1\models\Messages;
+use api\modules\v1\models\Likes;
+
 /**
  * Salamiuser Controller API
  */
@@ -89,6 +91,11 @@ class SalamiuserController extends ActiveController
             throw new \yii\web\HttpException(500, 'Internal server error');
         }
         return [];
+    }
+
+    public function actionLikes(){
+        $result = Likes::find()->joinWith('user')->where(['user1_id' => $_GET['user_id']])->asArray()->all();
+        return $result;
     }
 
     function removeFromArrayById($arr, $id){
