@@ -48,8 +48,12 @@ class Salamiuser extends ActiveRecord
         return $this->hasMany(Album::className(), ['user_id' => 'id']);
     }
 
-    public function getLikes()
-    {
+    public function getLikes(){
         return $this->hasMany(Likes::className(), ['user1_id' => 'id']);
+    }
+
+    public function getLikedusers(){
+        return $this->hasMany(Salamiuser::className(), ['id' => 'user2_id'])
+                    ->viaTable(Likes::tableName(), ['user1_id' => 'id']);
     }
 }

@@ -94,7 +94,8 @@ class SalamiuserController extends ActiveController
     }
 
     public function actionLikes(){
-        $result = Likes::find()->joinWith('user')->where(['user1_id' => $_GET['user_id']])->asArray()->all();
+        $current_user = Salamiuser::find()->where(['id' => $_GET["user_id"]])->one();
+        $result = $current_user->getLikedusers()->joinWith('albums')->asArray()->all();
         return $result;
     }
 
