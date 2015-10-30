@@ -73,20 +73,29 @@ class SalamiuserController extends ActiveController
     public function actionConversations()
     {
         try {
-            $results1 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`', '`messages`.`recipient_id`'])
-                                        ->leftJoin('salami_user', '`messages`.`recipient_id` = `salami_user`.`id`')
-                                        ->where(['sender_id' => $_GET['user_id']])
-                                        ->orderBy(['created_at' => SORT_DESC])
-                                        ->distinct(['`salami_user`.`id`'])
-                                        ->asArray()->all();
-            $results2 = Messages::find()->select(['`salami_user`.`name`', '`salami_user`.`profile_picture`', '`salami_user`.`id`', '`messages`.`text`', '`messages`.`created_at`', '`messages`.`state`', '`messages`.`recipient_id`'])
-                                        ->leftJoin('salami_user', '`messages`.`sender_id` = `salami_user`.`id`')
-                                        ->where(['recipient_id' => $_GET['user_id']])
-                                        ->orderBy(['created_at' => SORT_DESC])
-                                        ->distinct(['`salami_user`.`id`'])
-                                        ->asArray()->all();
-            
-            return array_merge($results1, $results2);
+            $query = new Query;
+            $messages = $query->select(['`messages`.*'])
+              ->from('salami_user')
+              ->join('JOIN', 'messages', 'messages.recipient_id = salami_user.id')
+              ->where(['messages.recipient_id' => $_GET['user_id']])
+              ->orWhere(['messages.sender_id' => $_GET['user_id']])
+              ->groupBy(['sender_id', 'recipient_id'])
+              ->orderBy(['messages.created_at' => SORT_DESC])->all();
+            $unique_users = array();
+            $result = array();
+            foreach ($messages as $message) {
+                if ($message["sender_id"] == $_GET['user_id'] &&  !in_array($message["recipient_id"], $unique_users)) {
+                    $unique_users[] = $message["recipient_id"];
+                    $message["user"] = Salamiuser::find()->where(['id' => $message["recipient_id"]])->one();
+                    $result[] = $message;
+                }
+                if ($message["recipient_id"] == $_GET['user_id'] && !in_array($message["sender_id"], $unique_users)) {
+                    $unique_users[] = $message["sender_id"];
+                    $message["user"] = Salamiuser::find()->where(['id' => $message["sender_id"]])->one();
+                    $result[] = $message;
+                }
+            }
+            return $result;
         } catch (Exception $ex) {
             throw new \yii\web\HttpException(500, 'Internal server error');
         }
