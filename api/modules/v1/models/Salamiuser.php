@@ -49,7 +49,7 @@ class Salamiuser extends ActiveRecord
     }
 
     public function getLikes(){
-        return $this->hasMany(Likes::className(), ['user1_id' => 'id']);
+        return $this->hasMany(Likes::className(), ['user2_id' => 'id']);
     }
 
     public function getLikedusers(){

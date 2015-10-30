@@ -95,8 +95,12 @@ class SalamiuserController extends ActiveController
 
     public function actionLikes(){
         $current_user = Salamiuser::find()->where(['id' => $_GET["user_id"]])->one();
-        $result = $current_user->getLikedusers()->joinWith('albums')->asArray()->all();
-        return $result;
+        $query = new Query;
+        $salami_ids = $query->select('salami_user.id')->from('salami_user')
+              ->join('INNER JOIN', 'likes', 'likes.user2_id = salami_user.id')
+              ->where(['likes.type' => 'like', 'likes.user1_id' => $current_user->id])->all();
+        $salamiusers = Salamiuser::find()->joinWith('albums')->where(['id' => $salami_ids])->asArray()->all();;      
+        return $salamiusers;
     }
 
     function removeFromArrayById($arr, $id){
